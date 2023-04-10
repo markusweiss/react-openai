@@ -30,6 +30,18 @@ body {
   background-color: #000;
 }
 
+.history {
+  padding: 0;
+  list-style-type: none;
+}
+
+.history li {
+  padding: 10px;
+  margin-top: 10px;
+  background-color: rgb(203, 27, 27);
+  cursor: pointer;
+}
+
 .right-side {
   display: flex;
   flex: 1;
@@ -37,10 +49,25 @@ body {
   justify-content: space-between;
 }
 
+.feed {
+  list-style: none;
+  padding: 0;
+  overflow: auto;
+}
+
+.feed li {
+  padding: 10px;
+  margin-bottom: 8px;
+  background-color: #213547;
+}
+
+.feed li p {
+  margin: 0;
+}
+
 .bottom {
   display: flex;
   flex-direction: column;
-  border: 1px solid red;
 }
 
 .input-wrapper {
@@ -49,16 +76,22 @@ body {
     max-width: 600px;
 }
 
-input {
+input.text {
   width: 100%;
-  line-height: 20px;
+  line-height: 40px;
+  font-size: 22px;
 }
 
 #submit {
   position: absolute;
-  right: -120px;
-  bottom: 5px;
+  right: -110px;
+  text-align: center;
+  width: 90px;
+  bottom: 1px;
+  font-size: 22px;
   cursor: pointer;
+  background-color: rgb(203, 27, 27);
+  padding: 6px;
 }
 
 button {

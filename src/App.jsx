@@ -41,7 +41,7 @@ const App = () => {
     }
   }
 
-  console.log("VAL: ", message);
+  //console.log("Message: ", message);
 
   useEffect(() => {
     if(!currentChat && value && message) {
@@ -68,17 +68,17 @@ const App = () => {
 
   }, [message, currentChat])
 
-  console.log("prevch::", oldChat);
+  //console.log("OldChat:", oldChat);
 
   const activeChat = oldChat.filter(oldChat => oldChat.title === currentChat)
   const uniqueTitles = Array.from(new Set(oldChat.map(oldChat => oldChat.title)));
 
-  console.log("UT::", uniqueTitles);
+  //console.log("UnTitle: ", uniqueTitles);
 
   return (
     <div className="App">
       <section className='left-side'>
-        <button onClick={createNewChat}>start chat +</button>
+        <button onClick={createNewChat}>Add Chat +</button>
         <ul className="history">
           {uniqueTitles?.map((uniqueTitle, index) => <li key={index} onClick={ () => handleClick(uniqueTitle)}>{uniqueTitle}</li>)}
         </ul>
@@ -93,7 +93,7 @@ const App = () => {
         </ul>
         <div className="bottom">
           <div className="input-wrapper">
-            <input value={value} onChange={e => setValue(e.target.value)}></input>
+            <input className="text" value={value} onChange={e => setValue(e.target.value)}></input>
             <div id="submit" onClick={getMessages}>send</div>
           </div>
         </div>
